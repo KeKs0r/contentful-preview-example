@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="https://contentful.github.io/ui-extensions-sdk/cf-extension.css" rel="stylesheet">
+  <script src="https://contentful.github.io/ui-extensions-sdk/cf-extension-api.js"></script>
+  <script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <% for (var jsFile of htmlWebpackPlugin.files.js) { %>
+  <script>
+    <%= compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+  </script>
+  <% } %>
+
+</body>
+</html>

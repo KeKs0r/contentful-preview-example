@@ -1,0 +1,6 @@
+{
+  "id": "dgs-preview-link",
+  "name": "DGS Preview",
+  "srcdoc": "./dist/index.html",
+  "fieldTypes": ["Symbol"]
+}
